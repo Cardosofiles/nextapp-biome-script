@@ -3,6 +3,16 @@
 Este script simplifica o fluxo de trabalho da criação de uma aplicação Next, com Shadcn UI
 iniciando e criando um repositório com o Git e Github.
 
+- What is your project named? my-app (Pergunta no início do script)
+- Would you like to use TypeScript? No / Yes (Yes para TypeScript)
+- Would you like to use ESLint? No / Yes (No para ESLint)
+- Would you like to use Tailwind CSS? No / Yes (Yes para TailwindCSS)
+- Would you like your code inside a `src/` directory? No / Yes (Yes para src)
+- Would you like to use App Router? (recommended) No / Yes (Yes para App Router)
+- Would you like to use Turbopack for `next dev`? No / Yes (Yes para Turbopack)
+- Would you like to customize the import alias (`@/*` by default)? No / Yes (Yes para alias)
+- What import alias would you like configured? @/\* (No para configured)
+
 ---
 
 ## 📁 Estrutura
@@ -172,7 +182,7 @@ $ create-next
 
 ## Configuração do BiomeJS
 
-- Crie um arquivo biome.json na raiz do projeto
+- Atualize o arquivo biome.json na raiz do projeto
 
 ```bash
 {
