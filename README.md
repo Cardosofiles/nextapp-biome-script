@@ -172,7 +172,7 @@ $ create-next
 
 ## Configuração do BiomeJS
 
-- Crie um arquivo biome.json
+- Crie um arquivo biome.json na raiz do projeto
 
 ```bash
 {
