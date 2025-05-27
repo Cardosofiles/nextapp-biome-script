@@ -30,9 +30,15 @@ echo "✅ Projeto criado com sucesso!"
 echo "📦 Instalando dependências do Shadcn UI..."
 pnpm add @shadcn/ui clsx tailwind-variants
 
-# ⚙️ Inicializa Shadcn
+# ⚙️ Inicializa Shadcn UI
 echo "⚙️ Inicializando Shadcn UI..."
-npx shadcn-ui@latest init --yes
+echo "🎨 Ao iniciar, selecione a cor base desejada usando as setas do teclado (⬆️⬇️) e pressione ENTER:"
+echo "    → Neutral"
+echo "    → Gray"
+echo "    → Zinc"
+echo "    → Stone"
+echo "    → Slate"
+pnpm dlx shadcn@latest init
 
 # 🧹 Instala o Biome e cria configuração
 echo "📏 Instalando Biome (substituto do ESLint/Prettier)..."
