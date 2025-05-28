@@ -45,18 +45,61 @@ echo "📏 Instalando Biome (substituto do ESLint/Prettier)..."
 pnpm add -D @biomejs/biome
 cat > biome.json <<EOF
 {
-  "extends": [],
-  "linter": {
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "organizeImports": {
     "enabled": true
   },
   "formatter": {
-    "enabled": true,
     "indentStyle": "space",
     "indentWidth": 2,
-    "lineEnding": "lf",
-    "lineWidth": 100,
-    "quoteStyle": "double"
+    "lineWidth": 80
+  },
+  "javascript": {
+    "formatter": {
+      "arrowParentheses": "asNeeded",
+      "jsxQuoteStyle": "double",
+      "quoteStyle": "single",
+      "semicolons": "asNeeded",
+      "trailingCommas": "es5"
+    }
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off"
+      },
+      "suspicious": {
+        "noArrayIndexKey": "info"
+      }
+    }
+  },
+  "files": {
+    "ignore": [
+      "node_modules"
+    ]
   }
+}
+EOF
+
+# ⚙️ Cria configurações para VSCode em .vscode/settings.json
+mkdir -p .vscode
+cat > .vscode/settings.json <<EOF
+{
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit"
+  },
+  "editor.formatOnSave": true
 }
 EOF
 
