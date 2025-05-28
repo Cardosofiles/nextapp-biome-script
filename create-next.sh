@@ -45,7 +45,7 @@ echo "📏 Instalando Biome (substituto do ESLint/Prettier)..."
 pnpm add -D @biomejs/biome
 cat > biome.json <<EOF
 {
-  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+  "\$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "organizeImports": {
     "enabled": true
   },
